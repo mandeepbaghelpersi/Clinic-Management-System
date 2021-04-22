@@ -1,0 +1,75 @@
+﻿@model Clinic_Management_System.Models.patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>About Patient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.patient_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patient_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patient_age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patient_age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patient_visit_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patient_visit_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patient_symptoms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patient_symptoms)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patient_medicine)
+        </dt>
+
+        @if (String.IsNullOrWhiteSpace(Model.patient_medicine))
+        {
+            <dd class="text-danger">To be given</dd>
+        }
+        else
+        {
+            <dd>
+                @Html.DisplayFor(model => model.patient_medicine)
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+
+    @if (User.IsInRole("secretary"))
+    {
+        @Html.ActionLink("Edit Patient Details", "Edit", new { id = Model.patient_id }) <span> | </span>
+    }
+    @if (User.IsInRole("doctor"))
+    {
+        @Html.ActionLink("Edit Medcine Details", "Edit", new { id = Model.patient_id }) <span> | </span>
+    }
+
+    @Html.ActionLink("Back to List", "Index")
+</p>

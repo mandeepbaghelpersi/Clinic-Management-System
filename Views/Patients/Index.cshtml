@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Clinic_Management_System.Models.patient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (User.IsInRole("secretary"))
+    { 
+    <p>
+        @Html.ActionLink("Add New Patient", "Create")
+    </p>
+   }
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.patient_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patient_age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patient_visit_date)
+        </th>
+
+        @if (User.IsInRole("pharmacist") || User.IsInRole("doctor"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.patient_medicine)
+            </th>
+        }
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.patient_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.patient_age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.patient_visit_date)
+    </td>
+
+    @if (User.IsInRole("pharmacist") || User.IsInRole("doctor"))
+    {
+        if (String.IsNullOrWhiteSpace(item.patient_medicine))
+        {
+            <td class="text-danger">To be Given</td>
+        }
+        else
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.patient_medicine)
+            </td>
+        }
+
+    }
+
+<td>
+    @if (User.IsInRole("secretary"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = item.patient_id }) <span> | </span>
+    }
+    @if (User.IsInRole("doctor"))
+    {
+        if (String.IsNullOrWhiteSpace(item.patient_medicine))
+        {
+            @Html.ActionLink("Add Medicine", "AddMedicine", new { id = item.patient_id }) <span> | </span>
+        }
+        else
+        {
+
+                @Html.ActionLink("Edit Medicine", "AddMedicine", new { id = item.patient_id }) 
+           <span> | </span>
+        }
+    }
+
+        @Html.ActionLink("View Patient", "Details", new { id = item.patient_id })
+
+
+        @if (User.IsInRole("secretary"))
+        {
+            <span> | </span>
+        }
+
+        @if (User.IsInRole("secretary"))
+        {
+            @Html.ActionLink("Delete", "Delete", new { id = item.patient_id })
+        }
+        </td>
+    </tr>
+    }
+
+</table>
