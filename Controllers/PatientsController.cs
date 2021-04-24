@@ -85,6 +85,7 @@ namespace Clinic_Management_System.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "patient_id,patient_name,patient_age,patient_visit_date,patient_symptoms,patient_medicine")] patient patient)
         {
+           
             if (ModelState.IsValid)
             {
                 db.patients.Add(patient);

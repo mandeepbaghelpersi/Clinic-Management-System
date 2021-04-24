@@ -11,20 +11,14 @@ namespace Clinic_Management_System.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class patient
     {
         public int patient_id { get; set; }
-        [Display(Name = "Name")]
         public string patient_name { get; set; }
-        [Display(Name = "Age")]
         public Nullable<int> patient_age { get; set; }
-        [Display(Name = "Appointment Date")]
         public System.DateTime patient_visit_date { get; set; }
-        [Display(Name = "Symptoms")]
         public string patient_symptoms { get; set; }
-        [Display(Name = "Medication")]
         public string patient_medicine { get; set; }
     }
 }

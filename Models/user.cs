@@ -11,8 +11,7 @@ namespace Clinic_Management_System.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class user
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,13 +19,9 @@ namespace Clinic_Management_System.Models
         {
             this.roles = new HashSet<role>();
         }
-
+    
         public int user_id { get; set; }
-        [Display(Name = "Password")]
-        [Required]
         public string user_password { get; set; }
-        [Display(Name = "Username")]
-        [Required]
         public string user_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

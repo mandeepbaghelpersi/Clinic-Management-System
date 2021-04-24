@@ -25,9 +25,10 @@ namespace Clinic_Management_System
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
                       "~/Content/bootstrap-grid.min.css",
-                        "~/Content/bootstrap-utils.css",
+                      "~/Content/bootstrap-utils.css",
                       "~/Content/bootstrap-custom.css",
                       "~/Content/Site.css"));
+
         }
     }
 }

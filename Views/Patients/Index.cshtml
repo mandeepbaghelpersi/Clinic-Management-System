@@ -1,16 +1,21 @@
 ﻿@model IEnumerable<Clinic_Management_System.Models.patient>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Patient List";
 }
 
-<h2>Index</h2>
-@if (User.IsInRole("secretary"))
-    { 
-    <p>
-        @Html.ActionLink("Add New Patient", "Create")
-    </p>
-   }
+<div class="d-flex justify-content-between align-items-center">
+    <h2>Patient List</h2>
+    @if (User.IsInRole("secretary"))
+    {
+        <p>
+            @Html.ActionLink("Add New Patient", "Create", null, new { @class = "btn btn-primary" })
+        </p>
+    }
+
+</div>
+
+
 <table class="table">
     <tr>
         <th>

@@ -174,6 +174,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap5.min.css" />
+    <Content Include="Content\img\doctor.svg" />
+    <Content Include="Content\img\landing-vector.svg" />
+    <Content Include="Content\img\pharma.svg" />
+    <Content Include="Content\img\secretary.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

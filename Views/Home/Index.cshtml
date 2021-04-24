@@ -1,39 +1,80 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<section>
+    <div class="landing-card">
 
-<div class="jumbotron">
-    <h1>Clinic Management Application</h1>
-    <p class="lead">Manage your patients' data with ease.</p>
-    
-</div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="text-white display-1 font-weight-lighter mb-4" style="letter-spacing:-0.3rem">Clinic Management Application</h1>
+                    <h3 class="text-light display-4 font-weight-bold">Manage your patients' data with ease.</h3>
 
-<div class="row">
-    <div class="col-md-6">
-        <h3>Register</h3>
-        <p>
-           Register yourself if you are a new member of the clinic.
-            You can select your roles from:
-            <ol>
-                <li>
-                    Doctor
-                </li>
-                <li>
-                    Secretary
-                </li>
-                <li>
-                    Pharmacist
-                </li>
-            </ol>
-        </p>
-        @Html.ActionLink("Signup", "Signup", "Account", null, new { @class = "btn btn-default" })
+                    <div class="row mt-5">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-6">
+                                    @Html.ActionLink("Signup", "Signup", "Account", null, new { @class = "btn btn-white" })
+                                </div>
+                                <div class="col-6">
+                                    @Html.ActionLink("Login", "Login", "Account", null, new { @class = "btn btn-success" })
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="~/Content/img/landing-vector.svg" class="w-100" />
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    <div class="col-md-6">
-        <h3>Login</h3>
-        <p>
-            Login to your account using your username and password..
-            
-        </p>
-        @Html.ActionLink("Login", "Login", "Account" , null, new { @class = "btn btn-default" })
+</section>
+
+
+
+<section>
+
+
+    <h2 class="mb-5">
+        This application is intended for three types of user.
+    </h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="bg-dark card card-small">
+                <h3 class="text-white mb-3">Doctor</h3>
+                <p class="text-gray">
+                    If you are a doctor click the button below to register and manage your patients' medicines data at one place easily.
+                </p>
+                @Html.ActionLink("Signup as Doctor", "Signup", "Account", null, new { @class = "btn btn-sm btn-white ml-auto" })
+                <img src="~/Content/img/doctor.svg" class="card-img" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-dark card card-small">
+                <h3 class="text-white mb-3">Secretary</h3>
+                <p class="text-gray">
+                    If you are a secretary click the button below to register and add patient that visit the clinic. You can also edit them later if you want.
+                </p>
+                @Html.ActionLink("Signup as Secretary", "Signup", "Account", null, new { @class = "btn btn-sm btn-white ml-auto" })
+                <img src="~/Content/img/secretary.svg" class="card-img" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-dark card card-small">
+                <h3 class="text-white mb-3">Phramacist</h3>
+                <p class="text-gray">
+                    If you are a doctor click the button below to register and easily find all patient prescriptions at one place.
+                </p>
+                @Html.ActionLink("Signup as Phramacist", "Signup", "Account", null, new { @class = "btn btn-sm btn-white ml-auto" })
+                <img src="~/Content/img/pharma.svg" class="card-img" />
+            </div>
+        </div>
     </div>
-</div>
+
+
+</section>
+

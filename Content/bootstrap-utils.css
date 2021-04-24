@@ -3554,3 +3554,57 @@ a.text-danger:focus, a.text-danger:hover {
 a.text-gray-dark:focus, a.text-gray-dark:hover {
     color: #101112 !important;
 }
+
+h1, .h1 {
+    font-size: 2.1875rem;
+}
+
+h2, .h2 {
+    font-size: 1.75rem;
+}
+
+h3, .h3 {
+    font-size: 1.53125rem;
+}
+
+h4, .h4 {
+    font-size: 1.3125rem;
+}
+
+h5, .h5 {
+    font-size: 1.09375rem;
+}
+
+h6, .h6 {
+    font-size: 0.875rem;
+}
+
+.lead {
+    font-size: 1.09375rem;
+    font-weight: 300;
+}
+
+.display-1 {
+    font-size: 5rem;
+    font-weight: 100;
+    line-height: 1.2;
+}
+
+.display-2 {
+    font-size: 5.5rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom:3rem;
+
+}
+
+.display-3 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
