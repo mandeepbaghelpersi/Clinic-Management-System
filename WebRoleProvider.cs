@@ -39,7 +39,7 @@ namespace Clinic_Management_System
 
         public override string[] GetRolesForUser(string username)
         {
-            using (var context = new ClinicEntities())
+            using (var context = new ClinicDBEntities())
             {
                 var result = (from user in context.users 
                              join role in context.roles 

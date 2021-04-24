@@ -14,7 +14,7 @@ namespace Clinic_Management_System.Controllers
 {
     public class PatientsController : Controller
     {
-        private ClinicEntities db = new ClinicEntities();
+        private ClinicDBEntities db = new ClinicDBEntities();
 
         // GET: Patients
         public async Task<ActionResult> Index()
@@ -58,7 +58,7 @@ namespace Clinic_Management_System.Controllers
         {
             if (ModelState.IsValid)
             {
-                using(var context = new ClinicEntities())
+                using(var context = new ClinicDBEntities())
                 {
                     patient p = context.patients.Single(x => x.patient_id == pat.patient_id);
                     p.patient_medicine = pat.patient_medicine;

@@ -20,7 +20,7 @@ namespace Clinic_Management_System.Controllers
         [HttpPost]
         public ActionResult Login(user model)
         {
-            using (var context = new ClinicEntities())
+            using (var context = new ClinicDBEntities())
             {
 
                 bool loginIsValid = context.users.Any(x => x.user_name == model.user_name && x.user_password == model.user_password);
@@ -46,7 +46,7 @@ namespace Clinic_Management_System.Controllers
         [HttpPost]
         public ActionResult Signup(user model)
         {
-            using(var context = new ClinicEntities())
+            using(var context = new ClinicDBEntities())
             {
                 context.users.Add(model);
                 context.SaveChanges();

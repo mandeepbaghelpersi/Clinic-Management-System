@@ -13,10 +13,10 @@ namespace Clinic_Management_System.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ClinicEntities : DbContext
+    public partial class ClinicDBEntities : DbContext
     {
-        public ClinicEntities()
-            : base("name=ClinicEntities")
+        public ClinicDBEntities()
+            : base("name=ClinicDBEntities")
         {
         }
     
@@ -26,7 +26,7 @@ namespace Clinic_Management_System.Models
         }
     
         public virtual DbSet<patient> patients { get; set; }
-        public virtual DbSet<user> users { get; set; }
         public virtual DbSet<role> roles { get; set; }
+        public virtual DbSet<user> users { get; set; }
     }
 }

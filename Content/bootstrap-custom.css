@@ -1,0 +1,22 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family:Inter, sans-serif;
+}
+body {
+    background-color: #edeef7;
+}
+
+.card {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);
+    border-radius:1rem;
+    padding:1rem 2rem;
+    background-color:white;
+}
+
+.btn{
+    font-size:16px;
+    font-weight:normal;
+    text-transform:capitalize;
+    padding:1rem 2rem;
+}
